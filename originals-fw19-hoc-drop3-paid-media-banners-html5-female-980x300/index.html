@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <!-- META DATA -->
+      <meta name="ad.size" content="width=980,height=300">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- ALWAYS HTTPS LINKS TO ANY JS OR GOOGLE FONT FILES -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+      <!-- ADD TITLE -->
+      <title>980x300</title>
+  	  <link rel="stylesheet" href="style.css" type="text/css"/>
+      <script type="text/javascript">
+          var clickTag = "http://example.com";
+      </script>
+
+   <body>
+      <div id="container" onclick="window.open(window.clickTag)">
+      <div id="container-inner">
+        <img src="logo.png" class="abs"/>
+        <img src="head1.png" class="head1"/>
+        <img src="head2.png" class="head2"/>
+        <div class="righthalf">
+          <img src="cta.png" class="cta"/>
+        </div>
+        <div class="bg_1"></div>
+
+
+
+      </div>
+      </div>
+      <script>
+        // dom install
+        var DOMReady = function(a,b,c){b=document,c='addEventListener';b[c]?b[c]('DOMContentLoaded',a):window.attachEvent('onload',a)}
+
+        // is dom ready
+        DOMReady(function() {
+            animation()
+        });
+
+        // BEGIN THE GREENSOCK ANIMATION
+        function animation() {
+
+            var t1 = new TimelineMax();
+                t1.add(s1(),"+=0");
+        }
+
+        function s1() {
+              var t1 = new TimelineMax();
+                  t1
+                  .to('.bg_1', 1, {opacity:1, backgroundPositionY:"9000px", ease: SteppedEase.config(30)},"two")
+                  .from(".head1",0.9, {x: -980}, "two+=0.5")
+                  .from(".head2",1, {x: -980}, "two+=0.5")
+                  .to(".cta",1, {left: -579}, "two+=0.5")
+                  console.log(t1.duration());
+                  return t1;
+        }
+      </script>
+   </body>
+
+</html>
