@@ -1,0 +1,67 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <!-- META DATA -->
+      <meta name="ad.size" content="width=728,height=90">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- ALWAYS HTTPS LINKS TO ANY JS OR GOOGLE FONT FILES -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+      <!-- ADD TITLE -->
+      <title>728x90</title>
+  	  <link rel="stylesheet" href="EXTREME_728x90_style.css" type="text/css"/>
+      <script type="text/javascript">
+          var clickTag = "http://example.com";
+      </script>
+    </head>
+   <body>
+      <div id="container" onclick="window.open(window.clickTag)">
+      <div id="container-inner">
+        <img src="EXTREME_728x90_product.png" class="product"/>
+        <img src="EXTREME_728x90_logo.png" class="abs"/>
+
+        <div class="lefthalf">
+          <img src="EXTREME_728x90_head1.png" class="head1"/>
+          <img src="EXTREME_728x90_head2.png" class="head2"/>
+        </div>
+        <div class="bg_1"></div>
+
+        <div class="righthalf">
+          <img src="EXTREME_728x90_cta.png" class="cta"/>
+        </div>
+
+
+
+      </div>
+      </div>
+      <script>
+        // dom install
+        var DOMReady = function(a,b,c){b=document,c='addEventListener';b[c]?b[c]('DOMContentLoaded',a):window.attachEvent('onload',a)}
+
+        // is dom ready
+        DOMReady(function() {
+            animation()
+        });
+
+        // BEGIN THE GREENSOCK ANIMATION
+        function animation() {
+
+            var t1 = new TimelineMax();
+                t1.add(s1(),"+=0");
+        }
+
+        function s1() {
+              var t1 = new TimelineMax();
+                  t1
+                  .to('.product', 1, {top: -60 },"two")
+                  .to('.bg_1', 1, {opacity:1, backgroundPositionY:"2700px", ease: SteppedEase.config(30)},"two")
+                  .to(".head1",0.4, {left: 0}, "two+=0.5")
+                  .to(".head2",0.5, {left: 0}, "two+=0.5")
+                  .to(".cta",0.5, {left: -516}, "two+=0.5")
+                  console.log(t1.duration());
+                  return t1;
+        }
+      </script>
+   </body>
+
+</html>
